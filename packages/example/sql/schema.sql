@@ -37,6 +37,12 @@ CREATE TABLE book_comments (
   body TEXT
 );
 
+CREATE TABLE countries (
+  id SERIAL PRIMARY KEY,
+  iso3 character(3) NOT NULL,
+  name TEXT NOT NULL
+)
+
 INSERT INTO users (email, user_name, first_name, last_name, age)
 VALUES ('alex.doe@example.com', 'alexd', 'Alex', 'Doe', 35),
        ('jane.holmes@example.com', 'jane67', 'Jane', 'Holmes', 23),
@@ -62,6 +68,11 @@ INSERT INTO authors (first_name, last_name)
 VALUES ('Nassim', 'Taleb'),
        ('Carl', 'Sagan'),
        ('Bertolt', 'Brecht');
+
+INSERT INTO countries (iso3, name)
+VALUES ('VEN', 'Venezuela'),
+       ('BGR', 'Republic of Bulgaria')
+       ('SVK', 'Slovakia')
 
 INSERT INTO books (rank, name, author_id)
 VALUES (1, 'Black Swan', 1),
